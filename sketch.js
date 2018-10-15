@@ -9,7 +9,7 @@ function setup() {
     fill(100, 0, 100);
     a = 0;
     r = 50;
-    size = 25;
+    size = 140;
     FOUR_PI = PI * 4;
 
 }
@@ -21,12 +21,17 @@ function draw() {
     y = r * sin(a);
     y1 = r * cos(a) + r * 1.3;
     if (a % FOUR_PI < TWO_PI) {
-        ellipse(x - r, y, size);
+        ellipse((x * -1) + r, y, size);
         ellipse((x * -1) + r, y1, size);
     } else {
-        ellipse((x * -1) + r, y, size);
+        ellipse(x - r, y, size);
         ellipse(x - r, y1, size);
     }
     a += 0.04;
 
+}
+
+function mousePressed() {
+    // size += 5;
+    fill(random(255), random(255), random(255));
 }
